@@ -1,7 +1,7 @@
 // TESTED ONLY IN VS CODE TERMINAL!!!!!
 // TODO: Support other terminals
 
-const drawATree = (height, message = "") => {
+const drawATree = (height, message = "** Merry Christmas **") => {
   let padding = 0;
   let chars = 0;
 
@@ -22,4 +22,4 @@ const drawATree = (height, message = "") => {
   console.log(`${" ".repeat(chars.length / 2 - message.length / 2)}${message}`);
 };
 
-drawATree(50, "** Merry Christmas **");
+drawATree(50);
