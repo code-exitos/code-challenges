@@ -12,15 +12,15 @@
 // USE ONLY UNDER YOUR OWN RISK
 // TODO: Support other terminals
 
-const drawATree = (height, message = '') => {
+const drawATree = (height, message = "") => {
   let padding = 0;
-  let spaces = 0;
+  let chars = 0;
 
   for (let i = height; i > 0; i--) {
     const char = i === height ? "⭐️" : i % 3 === 0 ? "💡" : "🎄";
     const line = " ".repeat(i) + char + char.repeat(height - i + " ");
     padding = ~~(height / 2);
-    spaces = line;
+    chars = line;
     console.log(line);
   }
 
@@ -30,7 +30,7 @@ const drawATree = (height, message = '') => {
     console.log(` ${scape}${"|".repeat(padding * 2)}`);
   }
 
-  console.log(`${" ".repeat(spaces.length / 2 - message.length / 2)}${message}`);
+  console.log(`${" ".repeat(chars.length / 2 - message.length / 2)}${message}`);
 };
 
 drawATree(60, "** Merry Christmas **");
