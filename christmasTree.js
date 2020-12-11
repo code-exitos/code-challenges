@@ -1,15 +1,4 @@
-// Draw a Christmas tree in the Console using a function that will receive a height value
-//     x
-//    xxx
-//   xxxxx
-//  xxxxxxx
-// xxxxxxxxx
-
-// Conditions: To draw the Christmas tree you should use only special chapters
-// Will simulate changes light as a real tree
-
-// USE ONLY IN VS CODE TERMINAL!!!!!
-// USE ONLY UNDER YOUR OWN RISK
+// TESTED ONLY IN VS CODE TERMINAL!!!!!
 // TODO: Support other terminals
 
 const drawATree = (height, message = "") => {
@@ -33,4 +22,4 @@ const drawATree = (height, message = "") => {
   console.log(`${" ".repeat(chars.length / 2 - message.length / 2)}${message}`);
 };
 
-drawATree(60, "** Merry Christmas **");
+drawATree(50, "** Merry Christmas **");
