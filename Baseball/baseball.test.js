@@ -1,7 +1,22 @@
-const baseball = require('./baseball');
+const ScoreCard = require('./baseball');
 
-describe('Baseball', () => {
-    it('should return one when passed one', () => {
-        expect(baseball(1)).toBe(1)
-    })
+describe('ScoreCard', () => {
+    let scoreCard;
+
+    beforeEach(() => {
+      scoreCard = new ScoreCard()
+    });
+
+    it('should construct a ScoreCard', () => {
+        expect(scoreCard).toBeDefined()
+    });
+
+    it('Should create a Score from the begining of a game', () => {
+        expect(scoreCard.getScore()).toBe('Home: 0 Away: 0');
+    });
+
+    it('Should Add score to the game', () => {
+        scoreCard.addEntry(4);
+        expect(scoreCard.getScore()).toBe('Home: 0 Away: 1');
+    });
 })
