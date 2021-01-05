@@ -4,11 +4,11 @@ describe('ScoreCard', () => {
     let scoreCard;
 
     beforeEach(() => {
-      scoreCard = new ScoreCard()
+      scoreCard = new ScoreCard();
     });
 
     it('should construct a ScoreCard', () => {
-        expect(scoreCard).toBeDefined()
+        expect(scoreCard).toBeDefined();
     });
 
     it('Should create a Score from the begining of a game', () => {
