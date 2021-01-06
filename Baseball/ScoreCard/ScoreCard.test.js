@@ -1,12 +1,10 @@
-const {ScoreCard, Team} = require('./baseball');
+const ScoreCard = require('./ScoreCard');
 
 describe('ScoreCard', () => {
     let scoreCard;
-    let team;
 
     beforeEach(() => {
       scoreCard = new ScoreCard();
-      team = new Team()
     });
 
     it('should construct a ScoreCard', () => {
@@ -35,6 +33,7 @@ describe('ScoreCard', () => {
         scoreCard.addEntry(4);
         expect(scoreCard.getScore()).toBe('Home: 1 Away: 0');
     });
+
     it('Should switch side twice', () => {
         scoreCard.addEntry(0);
         scoreCard.addEntry(0);
@@ -47,13 +46,12 @@ describe('ScoreCard', () => {
         expect(scoreCard.getScore()).toBe('Home: 1 Away: 1');
     });
 
-    it('should construct a Team', () => {
-        expect(team).toBeDefined();
-    });
-
-    it('team should display name and score', () => {
-        const aTeam = new Team("Foo");
-        expect(aTeam.toString()).toBe("Foo: 0");
+    it('Should score a run for away team after four singles', () => {
+        scoreCard.addEntry(1);
+        scoreCard.addEntry(1);
+        scoreCard.addEntry(1);
+        scoreCard.addEntry(1);
+        expect(scoreCard.getScore()).toBe('Home: 0 Away: 1');
     });
 
 })
