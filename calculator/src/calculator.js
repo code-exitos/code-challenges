@@ -7,10 +7,13 @@ const charToNumber = (char) => {
         case 'I':
             return 1
             break;
+        case 'II':
+            return 2
+            break;
         default:
             return -1
             break;
     }
 }
 
-module.exports = convertToDecimal
+module.exports = {convertToDecimal, charToNumber}
