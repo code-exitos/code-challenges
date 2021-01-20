@@ -48,4 +48,23 @@ describe('Roman Calculator', () => {
   it('should return forty-five if the value is XLV', () => {
     expect(convertToDecimal('XLV')).toBe(45)
   })
+
+  it('should return siXty-nine if the value is LXIX', () => {
+    expect(convertToDecimal('LXIX')).toBe(69)
+  })
+
+  it('should return  one hundred if the value is C', () => {
+    expect(convertToDecimal('C')).toBe(100)
+  })
+
+  it('should return  one hunderd one if the value is CI', () => {
+    expect(convertToDecimal('CI')).toBe(101)
+  })
+
+  it('should throw invalid roman number exception if the value is IIII', () => {
+    const convert = () => {
+      convertToDecimal('IIII')
+    }
+    expect(convert).toThrow("InvalidRomanNumber");
+  })
 })
